@@ -1,22 +1,16 @@
-import React, { useState, useMemo } from "react";
+import React,{useState} from "react";
 
-const UseMemo = () => {
-  const [count, setCount] = useState(0);
+const Increment = ()=>{
+     const [count,setCount] = useState(0);
+     function increseCount(){
+        setCount(count+1);
+     }
+     return (
+        <div>
+            <span>Count {" "} {count}{" "}</span>
+            <button id="incr-cnt" onClick={increseCount}>+</button>
+        </div>
+     )
+}
 
-  const dynamicContent = useMemo(() => {
-    return 1000000000 + count;
-  }, [count]);
-  return (
-    <div id="calc">
-      <h2>UseMemo Example</h2>
-      <p id="incr-cnt">Counter: {count}</p>
-      <p>{<p>{dynamicContent}</p>}</p>
-
-      <button onClick={() => setCount(count + 1)} id="incr-btn">
-        +<b>{count}</b>
-      </button>
-    </div>
-  );
-};
-
-export default UseMemo;
+export default Increment;
