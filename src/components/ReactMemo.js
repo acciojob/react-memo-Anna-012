@@ -1,18 +1,15 @@
 import React from "react";
+import Todo from "./Todo";
+import Increment from "./Increment";
+import Additem from "./Additem"
 
-const ReactMemo = () => {
-  const Component = ({ data }) => {
-    return <p>Data: {data}</p>;
-  };
-
-  const MemoizedComponent = React.memo(Component);
-
-  return (
-    <div>
-      <h2>React.memo Example</h2>
-      <MemoizedComponent data="Memoized Data" />
-    </div>
-  );
-};
-
-export default ReactMemo;
+const App = ()=>{
+    return(
+        <div id="main">
+            <Todo/>
+            <Increment/>
+            <Additem/>
+        </div>
+    )
+}
+export default App;
